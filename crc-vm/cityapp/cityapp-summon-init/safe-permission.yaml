@@ -1,0 +1,4 @@
+- !grant
+  role: !layer test/test_hosts
+  members:
+  - !layer /openshift-apps/cityapp
