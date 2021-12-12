@@ -29,7 +29,9 @@ conjur -d policy load -f ./cityapp/cityapp-summon-init/safe-permission.yaml -b r
 
 openssl s_client -showcerts -connect follower-dap.apps-crc.testing:443 \
     -servername follower-dap.apps-crc.testing </dev/null | \
-    sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > follower-certificate.pem
-oc create configmap follower-certificate --from-file=ssl-certificate=<(cat follower-certificate.pem)
-oc create configmap cityapp-summon-init-config --from-file=./cityapp/cityapp-summon-init/secrets.yaml
+    sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > /tmp/follower-certificate.pem
+oc create configmap follower-certificate --from-file=ssl-certificate=<(cat /tmp/follower-certificate.pem)
+cp ./cityapp/cityapp-summon-init/secrets.yaml /tmp/secrets.yaml
+sed -i "s/LAB_DOMAIN/$LAB_DOMAIN/g" /tmp/secrets.yaml
+oc create configmap cityapp-summon-init-config --from-file=/tmp/secrets.yaml
 set +x

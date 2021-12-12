@@ -56,7 +56,7 @@ spec:
           - name: CONJUR_APPLIANCE_URL
             value: "https://follower.dap.svc.cluster.local/api"
           - name: CONJUR_ACCOUNT
-            value: "DEMO"
+            value: "LAB_CONJUR_ACCOUNT"
           - name: CONJUR_SSL_CERTIFICATE
             valueFrom:
               configMapKeyRef:
@@ -99,7 +99,7 @@ spec:
           - name: CONJUR_AUTHN_URL
             value: "https://follower.dap.svc.cluster.local/api/authn-k8s/okd"
           - name: CONJUR_ACCOUNT
-            value: "DEMO"
+            value: "LAB_CONJUR_ACCOUNT"
           - name: CONJUR_AUTHN_LOGIN
             value: "host/conjur/authn-k8s/okd/apps/cityapp/service_account/cityapp-summon-init"
           - name: CONJUR_SSL_CERTIFICATE

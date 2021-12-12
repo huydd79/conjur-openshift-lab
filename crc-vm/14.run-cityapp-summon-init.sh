@@ -16,5 +16,7 @@ set -x
 eval $(crc oc-env)
 eval $(crc console --credentials | grep admin | sed -s "s/.* '\(.*\)'/\1/")   #'
 oc project cityapp
-oc apply -f ./cityapp/cityapp-summon-init/cityapp-summon-init.yaml
+cp ./cityapp/cityapp-summon-init/cityapp-summon-init.yaml /tmp/cityapp-summon-init.yaml
+sed -i "s/LAB_CONJUR_ACCOUNT/$LAB_CONJUR_ACCOUNT/g" /tmp/cityapp-summon-init.yaml
+oc apply -f /tmp/cityapp-summon-init.yaml
 set +x

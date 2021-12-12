@@ -59,7 +59,7 @@ spec:
         imagePullPolicy: Always
         env:
           - name: CONJUR_SEED_FILE_URL
-            value: https://conjur-master.cyberarkdemo.local/configuration/DEMO/seed/follower
+            value: https://conjur-master.LAB_DOMAIN/configuration/LAB_CONJUR_ACCOUNT/seed/follower
           - name: SEEDFILE_DIR
             value: /tmp/seedfile
           - name: FOLLOWER_HOSTNAME
@@ -67,7 +67,7 @@ spec:
           - name: AUTHENTICATOR_ID
             value: okd
           - name: CONJUR_ACCOUNT
-            value: DEMO
+            value: LAB_CONJUR_ACCOUNT
           - name: CONJUR_SSL_CERTIFICATE
             valueFrom:
               configMapKeyRef:

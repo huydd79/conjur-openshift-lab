@@ -8,6 +8,7 @@ fi
 
 set -x
 cd $UPLOAD_DIR
+echo "Extracting crc zip file. This process will take few minutes..."
 crc_dir=$(tar xvf $crc_zip_file | head -n 1)
 
 mv $UPLOAD_DIR/$crc_dir/crc /usr/local/bin/crc

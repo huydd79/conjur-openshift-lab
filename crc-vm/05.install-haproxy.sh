@@ -29,6 +29,4 @@ sudo sed -i "s/SERVER_IP/$SERVER_IP/g" /tmp/haproxy.cfg
 sudo sed -i "s/CRC_IP/$CRC_IP/g" /tmp/haproxy.cfg
 sudo mv /tmp/haproxy.cfg /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
-
-
 set +x

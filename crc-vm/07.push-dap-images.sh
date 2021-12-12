@@ -37,5 +37,3 @@ docker tag cyberark/dap-seedfetcher:$seedfetcher_version $dnsname/dap/dap-seedfe
 docker push $dnsname/dap/conjur-appliance
 docker push $dnsname/dap/dap-seedfetcher
 set +x
-#Doublecheck
-oc get is

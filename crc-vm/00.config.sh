@@ -1,11 +1,11 @@
 #!/bin/sh
 
 #Change your configuration and set READY=true when done
-READY=true
+READY=false
 
 #IP addresses of conjur and crc VM
-CONJUR_IP=10.0.0.100
-CRC_IP=10.0.0.101
+CONJUR_IP=172.16.100.61
+CRC_IP=172.16.100.62
 LAB_DOMAIN=demo.local
 LAB_CONJUR_ACCOUNT=DEMO
 

@@ -19,10 +19,11 @@ if [[ $count == 0 ]]; then
     cd ./cityapp/build
     set -euo pipefail
     sudo docker build -t cityapp:1.0 .
-    docker save cityapp -o cityapp-1.0.tgz
-    docker rmi $(docker images -a | grep cityapp | awk '{print $3}')
+    docker save cityapp -o /tmp/cityapp-1.0.tgz
+    docker rmi -f $(docker images -a | grep cityapp | awk '{print $3}')
     docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
-    docker load -i cityapp-1.0.tgz
+    docker rmi -f $(docker images -a | grep alpine | awk '{print $3}')
+    docker load -i /tmp/cityapp-1.0.tgz
 fi
 
 eval $(crc oc-env)

@@ -13,11 +13,11 @@ if [[ "$(whoami)" == "root" ]]; then
 fi
 
 set -x
-curl -s -LOJ https://github.com/cyberark/conjur-api-python3/releases/download/v7.0.1/conjur-cli-rhel-8.tar.gz
-tar xvf conjur-cli-rhel-8.tar.gz
-chmod 755 ./conjur
+sudo curl -s -LOJ https://github.com/cyberark/conjur-api-python3/releases/download/v7.0.1/conjur-cli-rhel-8.tar.gz
+sudo tar xvf conjur-cli-rhel-8.tar.gz
+sudo chmod 755 ./conjur
 sudo cp ./conjur /usr/local/bin
-conjur init -u https://conjur-master.cyberarkdemo.local
+conjur init -u https://conjur-master.$LAB_DOMAIN
 conjur login -i admin
 set +x
 #Doublecheck
