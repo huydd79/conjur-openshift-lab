@@ -10,8 +10,8 @@ set -x
 cd $UPLOAD_DIR
 crc_dir=$(tar xvf $crc_zip_file | head -n 1)
 
-ln -s $UPLOAD_DIR/$crc_dir/crc /usr/local/bin/crc
-
+mv $UPLOAD_DIR/$crc_dir/crc /usr/local/bin/crc
+echo "Creating crcuser for crc start up and operation"
 useradd crcuser
 passwd  crcuser
 usermod -aG wheel crcuser
