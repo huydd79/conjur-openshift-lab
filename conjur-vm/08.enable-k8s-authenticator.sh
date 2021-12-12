@@ -13,4 +13,3 @@ docker exec $node_name chpst -u conjur conjur-plugin-service possum rake authn_k
 docker exec -it $node_name sh -c 'grep -q "authn,authn-k8s/okd" /opt/conjur/etc/conjur.conf || echo "CONJUR_AUTHENTICATORS=\"authn,authn-k8s/okd\"\n">>/opt/conjur/etc/conjur.conf'
 docker exec $node_name sv restart conjur
 set +x
-curl -k https://conjur-master.cyberarkdemo.local/info

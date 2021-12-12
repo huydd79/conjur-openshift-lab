@@ -21,10 +21,5 @@ docker run --name mysqldb -v $db_dir:/docker-entrypoint-initdb.d \
      -e MYSQL_USER=cityapp \
      -e MYSQL_PASSWORD=Cyberark1 \
      -p "3306:3306" -d mysql:5.7.29
-
 set +x
-
-#Testing mysql
-yum install -y mysql
-mysql -u cityapp -p -h conjur-master.cyberarkdemo.local
 

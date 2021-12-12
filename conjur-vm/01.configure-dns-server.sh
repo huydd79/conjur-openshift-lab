@@ -15,12 +15,16 @@ address=/apps-crc.testing/$CRC_IP
 address=/crc.testing/$CRC_IP
 expand-hosts
 EOF
-grep -qxF "$CONJUR_IP conjur-master.cyberarkdemo.local" /etc/hosts || echo "$CONJUR_IP conjur-master.cyberarkdemo.local" >> /etc/hosts
-grep -qxF "$CRC_IP ocp-crc.cyberarkdemo.local" /etc/hosts || echo "$CRC_IP ocp-crc.cyberarkdemo.local" >> /etc/hosts
+grep -qxF "$CONJUR_IP conjur-master.$LAB_DOMAIN" /etc/hosts || echo "$CONJUR_IP conjur-master.$LAB_DOMAIN" >> /etc/hosts
+grep -qxF "$CRC_IP ocp-crc.$LAB_DOMAIN" /etc/hosts || echo "$CRC_IP ocp-crc.$LAB_DOMAIN" >> /etc/hosts
 
 systemctl enable dnsmasq
 systemctl restart dnsmasq
 firewall-cmd --add-service=dns --permanent
 firewall-cmd --reload
+
+conn_name=$(nmcli con | grep ethernet | awk '{print $1}')
+nmcli con mod $conn_name ipv4.dns 127.0.0.1
+systemctl restart NetworkManager
 
 set +x

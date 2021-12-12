@@ -9,11 +9,11 @@ fi
 set -x
 masterContainer=$node_name
 serverType="master"
-masterDNS="conjur-master.cyberarkdemo.local"
-clusterDNS="conjur-master.cyberarkdemo.local"
-standby1DNS="$node_name.cyberarkdemo.local"
-adminPass="CyberArk123!"
-accountName="DEMO"
+masterDNS="conjur-master.$LAB_DOMAIN"
+clusterDNS="conjur-master.$LAB_DOMAIN"
+standby1DNS="$node_name.$LAB_DOMAIN"
+adminPass=$LAB_CONJUR_ADMIN_PW
+accountName=$LAB_CONJUR_ACCOUNT
 docker exec $masterContainer evoke configure $serverType \
     --accept-eula -h $masterDNS \
     --master-altnames "$clusterDNS,$standby1DNS" \

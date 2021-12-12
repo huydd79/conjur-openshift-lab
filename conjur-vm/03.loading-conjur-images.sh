@@ -7,5 +7,5 @@ if [[ "$READY" != true ]]; then
 fi
 
 set -x
-docker load -i $UPLOAD_DIR/conjur-appliance_12.4.0.tar.gz
+docker load -i $UPLOAD_DIR/$conjur_appliance_file
 set +x

@@ -4,12 +4,15 @@
 READY=true
 
 #IP addresses of conjur and crc VM
-CONJUR_IP=172.16.100.61
-CRC_IP=172.16.100.62
-
+CONJUR_IP=10.0.0.100
+CRC_IP=10.0.0.101
+LAB_DOMAIN=demo.local
+LAB_CONJUR_ADMIN_PW=CyberArk123!
+LAB_CONJUR_ACCOUNT=DEMO
 #Path to folder with all docker images
-UPLOAD_DIR=~/upload/
-
+UPLOAD_DIR=/opt/lab/setup_files
+conjur_appliance_file=conjur-appliance_12.4.0.tar.gz
+conjur_version=12.4.0
 #Conjur container name
 node_name=conjur1
 
