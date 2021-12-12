@@ -1,5 +1,5 @@
 # Building your CyberArk Conjur Enterprise and Openshift CRC LAB
-By <huy.do@cyberark.com>
+Draft version 0.2 created by <huy.do@cyberark.com>
 
 # PART I: SETING UP ENVIRONMENT
 # 1. LAB Prerequisites
