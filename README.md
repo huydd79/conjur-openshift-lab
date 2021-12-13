@@ -70,7 +70,7 @@ Login to both machines as root and do following commands
 mkdir -p /opt/lab/setup_files
 chmod 777 /opt/lab/setup_files
 ```
-Copying all images and files to ~/setup_files folder. Below are files that will be needed for this lab. 
+Copying all images and files to ```/opt/lab/setup_files``` folder. Below are files that will be needed for this lab. 
 
 **ConjurVM**:
 
