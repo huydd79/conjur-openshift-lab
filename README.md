@@ -170,6 +170,8 @@ Login to CRCVM as crcuser, running following command to setup CRC environment
 cd /opt/lab/conjur-openshift-lab/crc-vm
 ./01.installing-crc.sh
 ```
+You will need to provide new password for crcuser after run above script. After script completed, double check the result by running ```crc``` command. If command is not available, run ```01.installing-crc.sh``` again and doublecheck.
+
 Su or relogin to CRCVM using crcuser and run below script to install openshift crc
 ```
 su crcuser
