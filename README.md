@@ -132,6 +132,8 @@ cd /opt/lab/conjur-openshift-lab/conjur-vm
 ./04.start-conjur-container.sh
 ./05.configure-conjur-master.sh
 ```
+If you got an error about the admin password is not valid, try to edit ```00.config.sh``` and put in valid password for conjur admin user.
+
 Open browser and login to <https://conjur-master.$LAB_DOMAIN> with user admin and password set in 00.config.sh file 
 
 ![policy](./images/04.conjur_gui.png)
@@ -143,6 +145,8 @@ Login to ConjurVM as root. Run below script to install and setup Conjur CLI in C
 cd /opt/lab/conjur-openshift-lab/conjur-vm
 ./06.install-conjur-cli.sh
 ```
+Enter yes to accept the certificate update and provide conjur admin password for CLI login.
+
 Run below script to load demo data to conjur environment
 ```
 cd /opt/lab/conjur-openshift-lab/conjur-vm
