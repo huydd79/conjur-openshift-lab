@@ -218,6 +218,8 @@ Login to CRCVM as crcuser and run below script to install and setup conjur CLI e
 cd /opt/lab/conjur-openshift-lab/crc-vm
 ./06.install-conjur-cli.sh
 ```
+Enter ```yes``` to accept the certificate update and provide conjur admin password for CLI login.
+
 ## **Step2: Pushing conjur docker images to OCP**
 Login to CRCVM as crcuser and run below commands to push all necessary images to Openshift CRC
 ```
