@@ -22,11 +22,10 @@ sudo firewall-cmd --add-port=9000/tcp --permanent
 sudo systemctl restart firewalld
 sudo semanage port -a -t http_port_t -p tcp 6443
 sudo mv /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.$(date "+%Y-%m-%d_%H-%M-%S").bak
-SERVER_IP=$(hostname --ip-address)
-CRC_IP=$(crc ip)
+CRC_IP_INTERNAL=$(crc ip)
 sudo cp ./haproxy/haproxy.cfg /tmp/haproxy.cfg
-sudo sed -i "s/SERVER_IP/$SERVER_IP/g" /tmp/haproxy.cfg
-sudo sed -i "s/CRC_IP/$CRC_IP/g" /tmp/haproxy.cfg
+sudo sed -i "s/SERVER_IP/$CRC_IP/g" /tmp/haproxy.cfg
+sudo sed -i "s/CRC_IP/$CRC_IP_INTERNAL/g" /tmp/haproxy.cfg
 sudo mv /tmp/haproxy.cfg /etc/haproxy/haproxy.cfg
 sudo systemctl restart haproxy
 set +x
