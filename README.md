@@ -185,7 +185,9 @@ After setup process completed successfully, run below script to start CRC enviro
 cd /opt/lab/conjur-openshift-lab/crc-vm
 ./03.crc-start.sh
 ```
-There will have some error notification related to ssh connection or pull secret, they are normal. If the starting process got failed, try to run crc delete and crc start again.
+There will have some error notification related to ssh connection or pull secret, they are normal. 
+If the starting process got failed, try to run crc delete and crc start again.
+
 After the starting process completed successfully, take note of the kubeadmin and developer ‘s credential and login url. Checking for crc status and login to openshift crc cli console with below commands (note that there have an additional dot before a script path to pull result to environment)
 ```
 cd /opt/lab/conjur-openshift-lab/crc-vm
