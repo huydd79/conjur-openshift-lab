@@ -31,7 +31,7 @@ Draft version 0.2 created by <huy.do@cyberark.com>
   - Download CRC for Linux <https://console.redhat.com/openshift/create/local>
   - Dowload pull secret and store in file: pull-secret.txt
 
-*The IP addresses in this document is using from current lab environment. Please replace the **172.16.100.62** by your **CRCVM**’s and **172.16.100.61** by your **ConjurVM**’s IPs*.
+*The IP addresses in this document are using from current lab environment. Please replace the **172.16.100.62** by your **CRCVM**’s and **172.16.100.61** by your **ConjurVM**’s IPs*.
 
 
 # 2. VMs Preparation
@@ -91,7 +91,9 @@ Login to both machines as root and do following commands
 cd /opt/lab
 git clone https://github.com/huydd79/conjur-openshift-lab.git
 ```
-Edit ```/opt/lab /conjur-openshif-lab/conjur-vm/00.config.sh``` and ```/opt/lab /conjur-openshif-lab/crc-vm/00.config.sh```, change the parameters to meet your local lab (IP addresses, domain, setup_files folder…). Set READY=true when done.
+Edit ```/opt/lab /conjur-openshif-lab/conjur-vm/00.config.sh``` and ```/opt/lab /conjur-openshif-lab/crc-vm/00.config.sh```, change the parameters to meet your local lab (IP addresses, domain, setup_files folder…). Please carefully double check the UPLOAD_DIR folder and component file names to match your files. If there is any missmatch, the installation script will be failed.
+
+Set READY=true when done and save your config file.
 ## **Step5: Setting DNS server on ConjurVM**
 Login to ConjurVM as root. Running below script to install DNS service on ConjurVM	
 ```
