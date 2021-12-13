@@ -179,6 +179,7 @@ cd /opt/lab/conjur-openshift-lab/crc-vm
 ./02.crc-setup.sh
 ```
 This process will take few minutes (up to hours depends on Internet connection). About 11GB of data will need to be downloaded from Internet and installed to CRCVM.
+
 After setup process completed successfully, run below script to start CRC environment. Take a copy of pullscret text in screen, press Enter when done and paste to runtime environment as requested.
 ```
 cd /opt/lab/conjur-openshift-lab/crc-vm
