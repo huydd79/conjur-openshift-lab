@@ -7,7 +7,7 @@ READY=false
 CONJUR_IP=10.0.0.100
 CRC_IP=10.0.0.101
 LAB_DOMAIN=demo.local
-LAB_CONJUR_ADMIN_PW=CyberArk123!
+LAB_CONJUR_ADMIN_PW=######
 LAB_CONJUR_ACCOUNT=DEMO
 #Path to folder with all docker images
 UPLOAD_DIR=/opt/lab/setup_files
