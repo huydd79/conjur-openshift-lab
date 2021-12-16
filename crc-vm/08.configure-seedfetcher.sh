@@ -18,7 +18,7 @@ eval $(crc console --credentials | grep admin | sed -s "s/.* '\(.*\)'/\1/")
 oc project dap
 
 oc apply -f ./seedfetcher/conjur-authenticator-role.yaml
-oc apply -f ./seedfetcher/conjur-authenticator-role.yaml
+oc apply -f ./seedfetcher/conjur-authenticator-role-binding.yaml
 oc apply -f ./seedfetcher/conjur-authenticator-clusterole-binding.yaml
 
 sudo yum install -y jq
