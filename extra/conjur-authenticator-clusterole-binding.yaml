@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: conjur-authenticator-clusterrole-binding-dap1
+subjects:
+  - kind: ServiceAccount
+    name: conjur-follower
+    namespace: dap1
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: conjur-authenticator
