@@ -1,0 +1,25 @@
+- !policy
+  id: conjur/authn-k8s/SERVICE_ID
+  owner: !group admins
+  body:
+  - !variable kubernetes/service-account-token
+  - !variable kubernetes/ca-cert
+  - !variable kubernetes/api-url
+  - !variable ca/key
+  - !variable ca/cert
+  - !webservice
+  - !layer consumers
+  - !permit
+    role: !layer consumers
+    privilege: [ authenticate ]
+    resource: !webservice
+
+- !policy
+  id: conjur/seed-generation
+  body:
+  - !webservice
+  - !layer consumers
+  - !permit
+    role: !layer consumers
+    privilege: [ "execute" ]
+    resource: !webservice

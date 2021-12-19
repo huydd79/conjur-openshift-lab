@@ -1,0 +1,12 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: AUTHN_ROLE-clusterrole-binding-AUTHN_NS
+subjects:
+  - kind: ServiceAccount
+    name: AUTHN_SA
+    namespace: AUTHN_NS
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: AUTHN_ROLE

@@ -1,0 +1,36 @@
+#!/bin/sh
+
+#Change your configuration and set READY=true when done
+READY=true
+
+#Conjur master container name
+NODE_NAME=conjur1
+
+#Conjur master host name
+CONJUR_HOST=conjur-master
+
+#Lab domain name
+LAB_DOMAIN=demo.local
+
+#K8s authn service ID
+SERVICE_ID=conjur-authenticator
+
+#Authenticator namespace
+AUTHN_NS=conjur-authn
+
+#Authn service account
+AUTHN_SA=conjur-authn
+
+#Authn role name
+AUTHN_ROLE=conjur-authn
+
+#Follower namespace
+FOLLOWER_NS=conjur-follower
+
+#Follower service account
+FOLLOWER_SA=conjur-follower
+
+#Follower host ID
+FOLLOWER_HOST_ID=conjur-follower
+
+

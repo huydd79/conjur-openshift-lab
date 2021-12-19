@@ -1,0 +1,14 @@
+- !host
+  id: FOLLOWER_HOST_ID
+  annotations:
+    authn-k8s/namespace: FOLLOWER_NS
+    authn-k8s/service-account: FOLLOWER_SA
+    authn-k8s/authentication-container-name: configurator
+    openshift: "true"
+
+- !grant
+  roles:
+  - !layer conjur/authn-k8s/SERVICE_ID/consumers
+  - !layer conjur/seed-generation/consumers
+  members:
+  - !host FOLLOWER_HOST_ID
