@@ -1,7 +1,9 @@
 # Setting up Conjur Follower with Openshift Operators
-For conjur 12.4 and later
+This lab guide is working for conjur version 12.4 and openshift crc v4.9.
 
-For more detail, please follow <https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Integrations/k8s-ocp/k8s-follower-conts-dply.htm>
+For more detail on how to enable kubernetes authenticator, please read <https://docs.cyberark.com/product-doc/onlinehelp/aam-dap/latest/en/content/integrations/k8s-ocp/k8s-k8s-authn.htm>
+
+For more detail on how to setup conjur follower, please follow <https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Integrations/k8s-ocp/k8s-follower-conts-dply.htm>
 
 ### Lab prerequisites
 - Completed all steps in conjur-openshift-lab to setup conjur and crc environments
