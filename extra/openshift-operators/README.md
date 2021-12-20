@@ -1,4 +1,6 @@
 # Setting up Conjur Follower with Openshift Operators
+Created by huy.do@cyberark.com
+
 This lab guide is working for conjur version 12.4 and openshift crc v4.9.
 
 ### Video on step by step setting up this LAB is at https://www.youtube.com/watch?v=-LNENY7F7wA
@@ -7,7 +9,7 @@ For more detail on how to enable kubernetes authenticator, please read <https://
 
 For more detail on how to setup conjur follower, please follow <https://docs.cyberark.com/Product-Doc/OnlineHelp/AAM-DAP/Latest/en/Content/Integrations/k8s-ocp/k8s-follower-conts-dply.htm>
 
-### Lab prerequisites
+## Lab prerequisites
 - Completed all steps in conjur-openshift-lab to setup conjur and crc environments
 - Login to crcvm with crcuser and login to crc with kubeadmin user
 - Change the 00.config.sh content to match your lab environment, set READY=true when done. Using below configuration as example
@@ -26,29 +28,29 @@ FOLLOWER_HOST_ID=conjur-follower
 ```
 - Change working directory to extra/openshif-operators folder
 
-## 1. Init conjur CLI environmnet
+# 1. Init conjur CLI environmnet
 ```
 ./00.conjur-cli-login.sh
 ```
-## 2. Enabling conjur authenticator
+# 2. Enabling conjur authenticator
 ```
 ./01.conjur-enable-k8s-authn.sh
 ./02.k8s-configure-role-binding.sh
 ./03.conjur-push-k8s-authn-data.sh
 ```
-## 3. Creating conjur follower environment
+# 3. Creating conjur follower environment
 ```
 ./04.k8s-add-config-map.sh
 ./05.k8s-add-follower-policy.sh
 ```
-## 4. Installing Follower Operator
+# 4. Installing Follower Operator
 - Login to openshift web GUI
 - Select follower project
 - Go to Operators > OperatorHub and search for CyberArk
 - Select Operator and click Install
 - Select ```A specific namespace on the cluster``` and click on Install
 - Check the result on ```Installed Operators```
-## 5. Creating Conjur Follower
+# 5. Creating Conjur Follower
 - Login to Openshift web GUI and go to followe project with Conjur follower operators installed
 - Go to Operators > Installed Operators and click on ```Conjur Enterprise Follower Operator```
 - Select ```ConjurFollower``` and click on Create ConjurFollower and put in below configuration data as sample
@@ -63,7 +65,7 @@ FOLLOWER_HOST_ID=conjur-follower
   - On ```Container Environment Variables``` click on Conjur > Add Conjur. Enter Name: CONJUR_AUTHENTICATORS and Value: authn, authn-k8s/conjur-authenticator
   - On ```Kubernetes Resources``` set Service Account as conjur-follower
 - Click on ```Create``` to create follower
-## 6. Troubleshooting result
+# 6. Troubleshooting result
 - Go to Workloads > Pods
 - Click on new Pods which has just created (with name conjur-follower and status Init)
 - Click on Logs tab and select configurator from the container dropbox. Watching configurator log for the detail authentication
