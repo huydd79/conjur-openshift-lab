@@ -170,7 +170,7 @@ curl -k https://conjur-master.$LAB_DOMAIN/info
 
 # 5. Setting up Openshift CRC Environment
 ## **Step1: CRC Installing and starting up**
-Login to CRCVM as crcuser, running following command to setup CRC environment
+Login to CRCVM as root, running following command to setup CRC environment
 ```
 cd /opt/lab/conjur-openshift-lab/crc-vm
 ./01.installing-crc.sh
