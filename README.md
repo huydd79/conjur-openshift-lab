@@ -52,6 +52,8 @@ Installing OS with minimal packages
 ## **Step2: Installing docker in both ConjurVM and CRCVM**
 Login to both VMs as root, checking for Internet connection and running below commands to install docker engine and creating new user for lab environment
 ```
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 yum remove docker docker-client docker-client-latest \
     docker-common docker-latest docker-latest-logrotate \
     docker-logrotate docker-engine
