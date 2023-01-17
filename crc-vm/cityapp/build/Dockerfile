@@ -1,4 +1,4 @@
-FROM alpine:3.9 as app-builder
+FROM alpine:latest as app-builder
 MAINTAINER CyberArk
 LABEL builder="app-builder"
 
@@ -18,7 +18,7 @@ RUN curl -sSL https://raw.githubusercontent.com/cyberark/summon/master/install.s
 ENV PATH="/usr/local/lib/summon:${PATH}"
 
 # ============= MAIN CONTAINER ============== #
-FROM alpine:3.9
+FROM alpine:latest
 MAINTAINER CyberArk
 
 ENV BUILD_PACKAGES bash curl build-base vim
